@@ -12,4 +12,48 @@
 	
 对于MVP框架来说，可以在Model或Presenter层进行异步回调的判断。
 
+## 用法
 
+###### 1. 在需要判断的Activity/Fragment中实现Lifeful接口，实现isAlive()方法。
+```java
+    @Override
+    public boolean isAlive() {
+        if (activity == null)
+            return false;
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.JELLY_BEAN_MR1) {
+            return !(activity.isDestroyed() || activity.isFinishing());
+        }
+        return !activity.isFinishing();
+    }
+```
+
+###### 2. 将Lifeful传递给Presenter层，在Presenter层做判断。
+```java
+    loadModel.load(new OnLoadLifefulListener<>(new OnLoadListener<String>() {
+            @Override
+            public void onSuccess(String success) {
+                
+            }
+
+            @Override
+            public void onError(String error) {
+                
+            }
+        }, lifeful));
+       
+```
+当然了，如果你不需要判断，可以直接使用OnLoadListener
+```java
+    loadModel.load(new OnLoadListener<String>() {
+             @Override
+             public void onSuccess(String success) {
+                    
+             }
+    
+             @Override
+             public void onError(String error) {
+                    
+             }
+         });
+       
+```

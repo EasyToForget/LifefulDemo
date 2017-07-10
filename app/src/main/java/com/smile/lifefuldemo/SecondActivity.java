@@ -90,8 +90,7 @@ public class SecondActivity extends AppCompatActivity implements TaskContract.Vi
             return false;
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.JELLY_BEAN_MR1) {
             return !(activity.isDestroyed() || activity.isFinishing());
-        } else {
-            return !activity.isFinishing();
         }
+        return !activity.isFinishing();
     }
 }
