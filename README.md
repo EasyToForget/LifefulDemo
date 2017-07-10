@@ -14,7 +14,7 @@
 
 ## 用法
 
-###### 1. 在需要判断的Activity/Fragment中实现Lifeful接口，实现isAlive()方法。
+###### 1. 在需要判断的Activity/Fragment中实现Lifeful接口和isAlive()方法，你也可以在BaseActivity/BaseFragment中实现Lifeful接口和isAlive()方法，所有的Activity/Fragment继承即可。
 ```java
     @Override
     public boolean isAlive() {
