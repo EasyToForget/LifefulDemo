@@ -1,6 +1,6 @@
 # Lifeful
 
-基于Lifeful接口的异步回调框架
+基于Lifeful接口的异步回调框架，点击[blog][1]查看更多。
 
 ## 用法
 
@@ -57,3 +57,5 @@
          });
        
 ```
+
+[1]: https://easytoforget.github.io/2017/07/25/handle-callback-while-activity-or-fragment-finished/
