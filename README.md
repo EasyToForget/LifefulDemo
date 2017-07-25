@@ -1,6 +1,6 @@
 # Lifeful
 
-基于Lifeful接口的异步回调框架，点击[blog][1]查看更多。
+基于 Lifeful 接口的异步回调框架，点击 [blog][1] 查看更多。
 
 ## 用法
 
@@ -10,11 +10,11 @@
 	compile 'com.smile:lifeful:1.0.0'
 	```
 	
-对于MVP框架来说，可以在Model或Presenter层进行异步回调的判断。
+对于MVP框架来说，可以在 Model 或 Presenter 层进行异步回调的判断。
 
 ## 用法
 
-###### 1. 在需要判断的Activity/Fragment中实现Lifeful接口和isAlive()方法，你也可以在BaseActivity/BaseFragment中实现Lifeful接口和isAlive()方法，所有的Activity/Fragment继承即可。
+###### 1. 在需要判断的 Activity/Fragment 中实现 Lifeful 接口和 isAlive() 方法，你也可以在 BaseActivity/BaseFragment 中实现 Lifeful 接口和 isAlive() 方法，所有的 Activity/Fragment 继承即可。
 ```java
     @Override
     public boolean isAlive() {
@@ -27,7 +27,7 @@
     }
 ```
 
-###### 2. 将Lifeful传递给Presenter层，在Presenter层做判断。
+###### 2. 将 Lifeful 传递给 Presenter 层，在 Presenter 层做判断。
 ```java
     loadModel.load(new OnLoadLifefulListener<>(new OnLoadListener<String>() {
             @Override
@@ -42,7 +42,7 @@
         }, lifeful));
        
 ```
-当然了，如果你不需要判断，可以直接使用OnLoadListener
+当然了，如果你不需要判断，可以直接使用 OnLoadListener
 ```java
     loadModel.load(new OnLoadListener<String>() {
              @Override
